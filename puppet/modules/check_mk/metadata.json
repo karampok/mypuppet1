@@ -1,0 +1,44 @@
+{
+  "checksums": {
+    "templates/agent/check_mk.erb": "6f4f78bffb3bf2b7949d5ff9fb7af8ef",
+    "manifests/agent/install.pp": "982a9d4c92dd6e8c2442b2db4999b431",
+    "templates/setup.conf.erb": "079d942437bc46771bceffafab61cd64",
+    "Notes": "77578d52ae78610f604f96ff9d089fcc",
+    "manifests/install_tarball.pp": "7e38e81ee0f37f6b870c840259ca7364",
+    "manifests/hostgroup.pp": "c1cd1250d0b515b9f866e3ceb72eb6cf",
+    "templates/main.mk.erb": "59a935581109a0add51432963a03bd2e",
+    "manifests/service.pp": "0ed116fb726d7abca213ef119d9556d0",
+    "manifests/agent.pp": "46ba48edbc376888a3b11c8167b31b27",
+    "manifests/init.pp": "561a0d6d479c018188693bb9f429f839",
+    "Modulefile": "eab9b5d1bb1425fb667525f392dab05a",
+    "manifests/config.pp": "7b536b01f3b88fbfad32fa30644560e8",
+    "manifests/agent/config.pp": "12edc962eef1111333dca249ff3fc683",
+    "README.md": "3e221d3eeecf8ee14108569baf8307b4",
+    "manifests/install.pp": "9dc0597adee994ad35fbda9fb54db237",
+    "manifests/host.pp": "799d942620448404be207a703cde345d",
+    "Changelog": "32dda13e1826bb4f596d707687f7d7cb",
+    "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
+    "manifests/agent/service.pp": "06fc7d9cdfc52c26c41c05e93c2e9d34"
+  },
+  "license": "Apache License, Version 2.0",
+  "version": "0.3.0",
+  "source": "https://github.com/erwbgy/puppet-check_mk.git",
+  "types": [
+
+  ],
+  "description": "Install and configure check_mk agent and Nagios plugin",
+  "summary": "install and configure check_mk",
+  "author": "erwbgy",
+  "name": "erwbgy-check_mk",
+  "dependencies": [
+    {
+      "version_requirement": ">= 2.6.0",
+      "name": "puppetlabs/stdlib"
+    },
+    {
+      "version_requirement": ">= 0.2.0",
+      "name": "ripienaar/concat"
+    }
+  ],
+  "project_page": "https://github.com/erwbgy/puppet-check_mk"
+}

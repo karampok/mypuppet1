@@ -1,0 +1,151 @@
+#start new if no existing session
+
+
+# remap prefix to Control + a
+set -g prefix C-a
+unbind C-b
+bind a send-prefix
+
+# force a reload of the config file
+unbind r
+bind r source-file ~/.tmux.conf
+
+unbind %
+bind _ split-window -v
+bind | split-window -h
+
+bind-key C-a last-window
+
+# confirm before killing a window or the server
+bind-key K confirm kill-server
+bind q killp
+
+#set-option -g default-terminal "screen-256color"
+#set -g default-terminal "screen-256color"
+set -g default-terminal "screen-256color"
+#set -g mode-mouse on
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+
+
+
+#starting from 0
+set -g base-index 1
+
+#open man in new window
+bind / command-prompt "split-window 'exec man %%'"
+
+set-option -g mouse-select-pane off
+set-option -g mouse-resize-pane off
+set-option -g mouse-select-window off
+set-window-option -g mode-mouse off
+#setw -g mode-mouse on
+#set-option -g bell-action any
+#set-option -g visual-bell on
+
+
+set -g history-limit 4096
+
+#closer to vim the copy paste
+setw -g mode-keys vi
+#unbind [
+#bind Escape copy-mode
+unbind p
+bind p paste-buffer
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+bind -t vi-copy Escape cancel
+set -sg escape-time 0
+bind Space choose-buffer
+
+# Set window notifications
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Automatically set window title
+setw -g automatic-rename on
+set-option -g set-titles on
+set-option -g set-titles-string '#H:#S.#I.#P #W #T' # window number,program name,active (or not)
+
+#
+#set-option -g status-keys vi
+# use the vim motion keys to move between panes
+ bind h select-pane -L
+ bind j select-pane -D
+ bind k select-pane -U
+ bind l select-pane -R
+#
+# # use vim motion keys while in copy mode
+# # use the vim resize keys.
+# # the number at the end is how much the pane will be resized,
+# # and 1 is fairly small -- you might want to tweak this.
+# bind resize-pane -R 1
+ bind - resize-pane -D 1
+ bind + resize-pane -U 1
+ bind < resize-pane -L 1
+ bind > resize-pane -R 1
+
+
+#### COLOUR
+# default statusbar colors
+#set-option -g status-bg colour235 #base02
+set -g status-bg black
+#set-option -g status-fg colour136 #yellow
+set -g status-fg white
+set-option -g status-attr default
+
+
+## default window title colors
+set-window-option -g window-status-fg white
+set-window-option -g window-status-bg default
+#set-window-option -g window-status-attr dim
+#
+# active window title colors
+set-window-option -g window-status-current-fg white #orange
+set-window-option -g window-status-current-bg blue
+#set-window-option -g window-status-current-attr bright
+#setw -g window-status-current-attr reverse
+
+
+# pane border
+set-option -g pane-border-fg white #base02
+set-option -g pane-active-border-fg green #base01
+#
+# message text
+set-option -g message-bg blue #base02
+set-option -g message-fg white #orange
+
+# pane number display
+set-option -g display-panes-active-colour colour33 #blue
+set-option -g display-panes-colour colour166 #orange
+
+# clock
+#set-window-option -g clock-mode-colour colour64 #green
+
+#
+# left
+
+# right
+set -g status-right-length 60
+set -g status-right-fg white
+set -g status-right-bg colour8
+set -g status-right-bg colour8
+
+
+# setting up status bar
+set -g status-interval 5
+set -g status-left-fg green
+set -g status-left-bg black
+#set -g status-left '#H:'
+set -g status-left '#(whoami)@#h '
+set -g status-left-length 50
+
+
+#set -g status-right '#(ri.sh cf) MHz | #(ri.sh ct)°C | #(cut -d " " -f 1-3 /proc/loadavg) | %a %d.%b |  %H:%M '
+set -g status-right '%a %d %b | %H:%M '
+set -g status-right-length 80
+
+
+#to include google calendar
+#set-option -g status-right "#(gcalcli agenda | head -2 | tail -1)"
+
+

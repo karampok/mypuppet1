@@ -1,0 +1,54 @@
+{
+  "name": "puppet-gitlab",
+  "version": "0.0.8",
+  "source": "https://github.com/sbadia/puppet-gitlab",
+  "author": "Steffen Roegner, Uwe Kleinmann, Matt Klich, Sebastien Badia",
+  "license": "GPLv3",
+  "summary": "Puppet GitLab Module",
+  "description": "Module to install GitLab using puppet",
+  "project_page": "https://github.com/sbadia/puppet-gitlab/",
+  "dependencies": [
+    {
+      "name": "puppetlabs/mysql",
+      "version_requirement": ">= 0.6.1"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.1.0"
+    },
+    {
+      "name": "fsalum/redis",
+      "version_requirement": ">= 0.0.5"
+    },
+    {
+      "name": "puppetlabs/nginx",
+      "version_requirement": ">= 0.0.1"
+    },
+    {
+      "name": "puppetlabs/ruby",
+      "version_requirement": ">= 0.0.2"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "CHANGELOG": "1fc265284be54deb59b4905114428419",
+    "LICENSE": "d32239bcb673463ab874e80d47fae504",
+    "Modulefile": "a60f9526c185b9e2778756e33b32b6e3",
+    "README.md": "486404a523e186edf03764e177ba917c",
+    "manifests/gitlabshell.pp": "11e4df04392e869d4d1c1ad8145e323c",
+    "manifests/init.pp": "4f46c924740f8a39640c22deb48fd8f4",
+    "manifests/params.pp": "f28b725ea34e1ad66e6645b9f92914b8",
+    "manifests/pre.pp": "0eec8a76aaea4d5d1ee91386a50033ba",
+    "manifests/server.pp": "bbad389aa536e21af62361cb9b57824b",
+    "templates/database.yml.erb": "0fcb9db55d8f3565193085299647d7e7",
+    "templates/git.gitconfig.erb": "c4bedb6c9dd2d2067508462ea4895c7c",
+    "templates/gitlab-shell.config.yml.erb": "1489ddc20a30e4a2b2f6bfe572834515",
+    "templates/gitlab.bundle.config.erb": "b3bf82e8cd2933f18525af092b39a82c",
+    "templates/gitlab.init.erb": "0c51e7d0b73da8b2156c92e41fd60b45",
+    "templates/gitlab.yml.erb": "3f11274a60bd096f6052a264f0954cd6",
+    "templates/nginx-gitlab.conf.erb": "8ddb0015be14ee9d7c115e86493fca4a",
+    "templates/puma.rb.erb": "c56e1d146c5a114c05e85188073164a9"
+  }
+}
